@@ -1,73 +1,87 @@
-# React + TypeScript + Vite
+# MiniStore - Mini E-commerce Front-End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Visão Geral
+MiniStore é um **mini e-commerce** feito com **React + TypeScript + Tailwind CSS v4**, consumindo a **Fake Store API** para exibir produtos reais. O projeto permite adicionar itens a um carrinho persistente usando `localStorage`, ideal para demonstração de habilidades em front-end.
 
-Currently, two official plugins are available:
+Este projeto serve para **mostrar domínio de tecnologias modernas de front-end** com foco em: consumo de API, estado global, design responsivo e TypeScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## 🏗️ Estrutura do Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+ministore/
+├── src/
+│   ├── components/
+│   │   ├── Navbar.tsx        # Navbar com contador de itens no carrinho
+│   │   ├── ProductCard.tsx   # Card de produto individual
+│   │   └── Cart.tsx          # Carrinho de compras (opcional modal)
+│   ├── pages/
+│   │   ├── Home.tsx          # Lista de produtos
+│   │   └── ProductDetail.tsx # Detalhes do produto
+│   ├── context/
+│   │   └── CartContext.tsx   # Context API para gerenciamento do carrinho
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+└── package.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚛️ Tecnologias Utilizadas
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React 18+** + **TypeScript**
+- **Tailwind CSS v4** para estilos responsivos e minimalistas
+- **Fake Store API** para produtos simulados
+- **LocalStorage** para persistência do carrinho
+- **Vite** como bundler rápido
+
+
+## 📦 Funcionalidades
+
+1. **Listagem de Produtos:** Consome a API e exibe produtos em grid responsivo.
+2. **Adicionar ao Carrinho:** Adiciona produtos com persistência em `localStorage`.
+3. **Contador no Navbar:** Mostra quantidade de itens no carrinho.
+4. **Design Responsivo:** Funciona perfeitamente em dispositivos móveis, tablets e desktops.
+5. **TypeScript e Context API:** Estado global e tipagem segura.
+
+
+## 🔧 Como Rodar o Projeto
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/ministore.git
+cd ministore
 ```
+
+2. Instale as dependências:
+
+```bash
+npm install
+```
+
+3. Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+4. Abra no navegador:
+
+```
+http://localhost:5173
+```
+
+
+## 🌟 Extras
+
+- Projeto 100% **TypeScript** com `type-only imports` compatíveis com `verbatimModuleSyntax`
+- Layout minimalista e moderno usando **Tailwind CSS v4**
+- **Persistência do carrinho** usando `localStorage`
+- Base pronta para **deploy em Vercel**
+- Código limpo e bem estruturado
+
+
+## 📝 Licença
+
+MIT License
